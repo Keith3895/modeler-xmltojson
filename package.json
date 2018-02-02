@@ -1,13 +1,15 @@
 {
   "name": "modeler-xmltojson",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "a node to convert xml to json and json to xml",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "node-red": {
-    "nodes": {}
+    "nodes": {
+      "xmlTojson":"./xmlTojson.js"
+    }
   },
   "keywords": [
     "node-red",
@@ -26,6 +28,7 @@
   },
   "homepage": "https://github.com/Keith3895/modeler-xmltojson#readme",
   "dependencies": {
-    "validator": "^9.4.0"
+    "validator": "^9.4.0",
+    "xml2json": "^0.11.0"
   }
 }
