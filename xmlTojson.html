@@ -1,0 +1,78 @@
+<script type="text/javascript">
+    RED.nodes.registerType('xmlTojson', {
+        category: 'function',
+        color: '#D8BFD8',
+        defaults: {
+            name: {
+                value: ""
+            },
+            sanitize: {
+                value: ""
+            },
+            coerce: {
+                value: ""
+            },
+            trim: {
+                value: ""
+            },
+            arrayNotation: {
+                value: ""
+            }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: ' arrow-in.png',
+        label: function () {
+            return this.name || 'xmlTojson'
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="xmlTojson">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row pg">
+        <input type="checkbox" id="node-input-sanitize" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-usetls" style="width: auto"> Sanitize </label>
+    </div>
+    <div class="form-row">
+        <input type="checkbox" id="node-input-coerce" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-usetls" style="width: auto"> Coerce </label>
+    </div>
+    <div class="form-row">
+        <input type="checkbox" id="node-input-trim" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-usetls" style="width: auto"> Trim </label>
+    </div>
+    <div class="form-row">
+        <input type="checkbox" id="node-input-arrayNotation" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-usetls" style="width: auto"> Array Notation </label>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="xmlTojson">
+    <p> A node to convert between xml and json </p> 
+    <h3>Input</h3>
+    <dl class="message-properties">
+    <dt>sanitize
+        <span class="property-type">Boolean</span>
+    </dt>
+    <dd>  Sanitizes the characters present in element values.</dd>
+    <dt>coerce
+        <span class="property-type">Boolean</span>
+    </dt>
+    <dd>Makes type coercion. i.e.: numbers and booleans present in attributes and element 
+        values are converted from Boolean to its correspondent data types.</dd>
+    <dt>trim
+        <span class="property-type">Boolean</span>
+    </dt>
+    <dd>Removes leading and trailing whitespaces as well as line terminators in element values.</dd>
+    <dt>Array Notation
+        <span class="property-type">Boolean</span>
+    </dt>
+    <dd>XML child nodes are always treated as arrays NB: you can specify a selective
+         array of nodes for this to apply to instead of the whole document.
+    </dd>
+    </dl>    
+</script>
